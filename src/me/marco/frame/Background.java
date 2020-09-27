@@ -2,6 +2,7 @@ package me.marco.frame;
 
 import me.marco.ball.Ball;
 import me.marco.player.Player;
+import me.marco.player.PlayerTwo;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -10,25 +11,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class Background extends JPanel implements ActionListener {
 
     private Image img;
     private Player player;
+    private PlayerTwo playertwo;
+    private Rectangle rectPlayerTwo;
     private Timer timer;
     private Ball ball;
     private Rectangle rectPlayer;
     private Rectangle rectBall;
 
     public Background() throws IOException {
-        setFocusable(true);
-        setDoubleBuffered(true);
 
         img = ImageIO.read(new File("res/field.png"));
 
+        setFocusable(true);
+        setDoubleBuffered(true);
+
         player = new Player();
+        playertwo = new PlayerTwo();
 
         ball = new Ball();
 
@@ -49,6 +53,10 @@ public class Background extends JPanel implements ActionListener {
 
         rectBall = new Rectangle(ball.getX(), ball.getY(), ball.getWidth(), ball.getHeight());
         g.fillRect(rectBall.x, rectBall.y, rectBall.width, rectBall.height);
+
+        rectPlayerTwo = new Rectangle(playertwo.getX(), playertwo.getY(), playertwo.getWidth(), playertwo.getHeight());
+        g.fillRect(rectPlayerTwo.x, rectPlayerTwo.y, rectPlayerTwo.width, rectPlayerTwo.height);
+
         g.dispose();
 
     }
@@ -56,11 +64,10 @@ public class Background extends JPanel implements ActionListener {
     public void collision() {
         Rectangle rect1 = player.bounds();
         Rectangle rect2 = ball.bounds();
+        Rectangle rect3 = playertwo.bounds();
 
-        System.out.println(ball.getY());
-
-        if (rect1.intersects(rect2)) {
-            ball.setDx(getRandomInt(5));
+        if (rect1.intersects(rect2) || rect3.intersects(rect2)) {
+            ball.setDx(getRandomInt(3));
             ball.setDy(getRandomInt(5));
         }
 
@@ -83,12 +90,14 @@ public class Background extends JPanel implements ActionListener {
         if(ball.getY() <= 40) {
             ball.setDy(3);
         }
+
     }
 
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         player.update();
+        playertwo.update();
         ball.update();
         collision();
         repaint();
@@ -100,11 +109,13 @@ public class Background extends JPanel implements ActionListener {
         public void keyPressed(KeyEvent e) {
             player.keyPressed(e);
             ball.keyPressed(e);
+            playertwo.keyPressed(e);
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             player.keyReleased(e);
+            playertwo.keyReleased(e);
         }
     }
 

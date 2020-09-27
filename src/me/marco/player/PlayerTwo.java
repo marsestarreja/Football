@@ -4,42 +4,41 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Player implements KeyListener {
+public class PlayerTwo implements KeyListener {
 
     private int x, y;
     private int dx, dy;
     private int width = 20, height = 20;
     private Rectangle rect;
 
-    public Player() {
-        x = 118;
-        System.out.println(x);
-        System.out.println(y);
+    public PlayerTwo() {
+        x = 844;
         y = 316;
     }
 
     public void update() {
         x += dx;
         y += dy;
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
-        if(keyCode == KeyEvent.VK_W) {
+        if (keyCode == KeyEvent.VK_UP) {
             dy = -3;
         }
 
-        if(keyCode == KeyEvent.VK_S) {
+        if (keyCode == KeyEvent.VK_DOWN) {
             dy = 3;
         }
 
-        if(keyCode == KeyEvent.VK_D) {
+        if (keyCode == KeyEvent.VK_RIGHT) {
             dx = 3;
         }
 
-        if(keyCode == KeyEvent.VK_A) {
+        if (keyCode == KeyEvent.VK_LEFT) {
             dx = -3;
         }
     }
@@ -48,19 +47,19 @@ public class Player implements KeyListener {
     public void keyReleased(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
-        if(keyCode == KeyEvent.VK_W) {
+        if (keyCode == KeyEvent.VK_UP) {
             dy = 0;
         }
 
-        if(keyCode == KeyEvent.VK_S) {
+        if (keyCode == KeyEvent.VK_DOWN) {
             dy = 0;
         }
 
-        if(keyCode == KeyEvent.VK_D) {
+        if (keyCode == KeyEvent.VK_RIGHT) {
             dx = 0;
         }
 
-        if(keyCode == KeyEvent.VK_A) {
+        if (keyCode == KeyEvent.VK_LEFT) {
             dx = 0;
         }
     }
@@ -91,4 +90,3 @@ public class Player implements KeyListener {
         return (new Rectangle(x, y, 20, 20));
     }
 }
-
