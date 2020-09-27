@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef006835-98bf-4eea-b56e-f3a3b3d18de5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/pong.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/me/marco/player/PlayerTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Football.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Football.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Football/me/marco/frame/Background$keyboardAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Football/me/marco/frame/Background$keyboardAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Football/me/marco/frame/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Football/me/marco/frame/Background.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Football/me/marco/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Football/me/marco/player/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/marco/frame/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/marco/frame/Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/me/marco/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/marco/player/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +18,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1i13mK61ShhYdhIpTgivYlAAJpS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -90,6 +83,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1601094336436" />
+    <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1601177425708">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1601177425708" />
     <state x="714" y="236" key="DetectedRootsChooserDialog" timestamp="1601133220441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -118,5 +115,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1601133232477" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601177402652">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.2560.1040@0.0.1920.1040" timestamp="1601177402652" />
   </component>
 </project>
