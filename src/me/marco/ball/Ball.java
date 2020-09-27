@@ -57,6 +57,14 @@ public class Ball implements KeyListener {
         return dy;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     @Override
     public void keyTyped(KeyEvent keyEvent) {
 
@@ -67,8 +75,11 @@ public class Ball implements KeyListener {
         int keycode = keyEvent.getKeyCode();
 
         if(keycode == KeyEvent.VK_SPACE) {
-            setDy(0);
-            setDx(0);
+            setDx(getDx() + 5);
+        }
+
+        if(keycode == KeyEvent.VK_P) {
+            setDx(getDx() - 5);
         }
     }
 

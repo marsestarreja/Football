@@ -1,6 +1,8 @@
 package me.marco.frame;
 
 import me.marco.ball.Ball;
+import me.marco.goals.GoalLeft;
+import me.marco.goals.GoalRight;
 import me.marco.player.Player;
 import me.marco.player.PlayerTwo;
 
@@ -23,6 +25,8 @@ public class Background extends JPanel implements ActionListener {
     private Ball ball;
     private Rectangle rectPlayer;
     private Rectangle rectBall;
+    private GoalRight goalRight;
+    private GoalLeft goalLeft;
 
     public Background() throws IOException {
 
@@ -33,6 +37,9 @@ public class Background extends JPanel implements ActionListener {
 
         player = new Player();
         playertwo = new PlayerTwo();
+
+        goalRight = new GoalRight();
+        goalLeft = new GoalLeft();
 
         ball = new Ball();
 
@@ -62,33 +69,47 @@ public class Background extends JPanel implements ActionListener {
     }
 
     public void collision() {
+
         Rectangle rect1 = player.bounds();
         Rectangle rect2 = ball.bounds();
         Rectangle rect3 = playertwo.bounds();
 
-        if (rect1.intersects(rect2) || rect3.intersects(rect2)) {
-            ball.setDx(getRandomInt(3));
-            ball.setDy(getRandomInt(5));
+        Rectangle rect4 = goalRight.bound();
+        Rectangle rect5 = goalLeft.bound();
+
+        if(rect2.intersects(rect4) || rect2.intersects(rect5)) {
+            ball.setDx(0);
+            ball.setDy(0);
+            ball.setX(493);
+            ball.setY(332);
+            System.out.println("GOAL!");
         }
 
-        if (ball.getX() >= 937) {
-            ball.setDx(-3);
+
+        if (rect1.intersects(rect2)) {
+            ball.setDx(getRandomInt(6));
+            ball.setDy(getRandomInt(4));
+        }
+
+        if (rect3.intersects(rect2)) {
+            ball.setDx(getRandomInt(-6));
+            ball.setDy(getRandomInt(-4));
         }
 
         if(ball.getX() <= 40) {
-            ball.setDx(3);
+            ball.setDx(1);
         }
 
         if (ball.getY() >= 613) {
-            ball.setDy(-3);
+            ball.setDy(-1);
         }
 
         if (ball.getX() >= 937) {
-            ball.setDx(-3);
+            ball.setDx(-1);
         }
 
         if(ball.getY() <= 40) {
-            ball.setDy(3);
+            ball.setDy(1);
         }
 
     }

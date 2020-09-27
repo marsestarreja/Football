@@ -8,7 +8,7 @@ public class PlayerTwo implements KeyListener {
 
     private int x, y;
     private int dx, dy;
-    private int width = 20, height = 20;
+    private int width = 30, height = 30;
     private Rectangle rect;
 
     public PlayerTwo() {
@@ -27,19 +27,19 @@ public class PlayerTwo implements KeyListener {
         int keyCode = e.getKeyCode();
 
         if (keyCode == KeyEvent.VK_UP) {
-            dy = -3;
+            dy = -2;
         }
 
         if (keyCode == KeyEvent.VK_DOWN) {
-            dy = 3;
+            dy = 2;
         }
 
         if (keyCode == KeyEvent.VK_RIGHT) {
-            dx = 3;
+            dx = 2;
         }
 
         if (keyCode == KeyEvent.VK_LEFT) {
-            dx = -3;
+            dx = -2;
         }
     }
 
